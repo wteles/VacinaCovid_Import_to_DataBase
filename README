@@ -1,0 +1,42 @@
+# PROJETO PARA REALIZAR IMPORTAÇÃO DE DADOS DE UM BUCKET OCI E CARREGA-LOS NUM BANCO DE DADOS ORACLE
+# A aplicação irá monitorar um Bucket no OCI, caso um arquivo de "flag" exista, essa aplicação irá
+# baixar os arquivos existentes no bucket e transferi-los para o Banco de Dados.
+
+# Python Version
+# O projeto foi desenvolvido utilizando Python versão 3.9.13
+
+# Ambiente virtual
+# Recomenda-se a criação de um amviente virtual (venv) para a execução do projeto
+python -m venv venv
+
+# Dependencias
+# As bibliotecas necessárias para a execução do projeto estão no arquivo requirements.txt, instale-as utilizando
+pip install -r requirements.txt
+
+# Credenciais
+# Deve-se criar um arquivo .env na raiz do projeto para colocar as credenciais, tanto do Banco de Dados, 
+# quanto as do Bucket OCI
+OCI_USER=
+OCI_FINGERPRINT=
+OCI_TENANCY=
+OCI_REGION=
+OCI_BUCKET_NAME=
+
+LAKE_USER=
+LAKE_PW=
+LAKE_SN=
+LAKE_CMD_USR=
+LAKE_CMD_URL=
+LAKE_TABLE=
+
+# Variáveis
+# Existe um arquivo variaveis.json para setar as variáveis da ETL, essas variáveis são para especificar os prefixos ("pastas")
+# no Bucket OCI e o nome do arquivo flag
+
+# Manutenção
+# Toda as ações realizadas pela aplicação tem tratativa de erros, caso um erro ocorra, um arquivo especificando
+# o erro é gerado. Esses arquivos deverão ser analizados para que uma ação seja tomada 
+
+# Escalabilidade
+# Por conta do projeto funcionar com multitrading, é possível escala-lo de forma simples apenas aumentando o 
+# número de processos paralelos que são executados, de acordo com a necessidade.

@@ -1,0 +1,8 @@
+{
+    "Settings": [
+        {
+            "oci_bucket_prefix": "CovidProject/Files/",
+            "oci_job_semaphore": "CovidProject/confirme_job.txt"
+        }
+    ]
+}
